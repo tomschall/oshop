@@ -1,5 +1,5 @@
-import { Observable } from 'rxjs/Observable';
 import { ShoppingCart } from './models/shopping-cart';
+import { Observable } from 'rxjs/Observable';
 import { Product } from './models/product';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 import { Injectable } from '@angular/core';
