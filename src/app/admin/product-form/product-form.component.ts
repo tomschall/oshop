@@ -9,7 +9,7 @@ import 'rxjs/add/operator/take';
   templateUrl: './product-form.component.html',
   styleUrls: ['./product-form.component.css']
 })
-export class ProductFormComponent implements OnInit {
+export class ProductFormComponent {
   categories$;
   product = {};
   id;
@@ -20,11 +20,7 @@ export class ProductFormComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id');
     /* because we have no async pipe we need to subscribe to the observable, with take 
        we take only 1 object and then we unsubscribe automatically from observable */
-    if (this.id) this.productService.get(this.id).take(1).subscribe(p => this.product = p);
-    
-  }
-
-  ngOnInit() {
+    if (this.id) this.productService.get(this.id).take(1).subscribe(p => this.product = p);  
   }
 
   save(product) {
@@ -40,7 +36,4 @@ export class ProductFormComponent implements OnInit {
     this.productService.delete(this.id);
     this.router.navigate(['/admin/products']);
   }
-
-  
-
 }
