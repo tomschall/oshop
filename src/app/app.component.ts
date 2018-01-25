@@ -1,7 +1,7 @@
-import { UserService } from './user.service';
+import { UserService } from './shared/services/user.service';
 import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
-import { AuthService } from './auth.service';
+import { AuthService } from './shared/services/auth.service';
 import { Component, OnDestroy } from '@angular/core';
 
 import { Subscription } from 'rxjs/Subscription';
